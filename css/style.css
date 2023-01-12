@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+
+/* ----- body ----- */
+body {
+  font-family: 'Gideon Roman', cursive;
+  margin: 0;
+  background-color: rgba(252, 245, 233, 0.512);
+}
+
+/* ----- header ----- */
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(181, 75, 22, 0.622);
+  color: rgb(255, 248, 248);
+  padding: 0.5em 1em;
+  border-width: 0 0 1em 0;
+  border-style: ridge;
+  border-color: rgba(247, 212, 181, 0.916);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+}
+
+/* ----- #menu ----- */
+#menu {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateX(100vw);
+  padding-top: 8em;
+}
+
+#menu {
+  transition: 0.5s;
+}
+
+#menu.open {
+  transform: none;
+  opacity: 1;
+  transition: 0.5s;
+  background-color: antiquewhite;
+}
+
+#menu a {
+  color: rgba(87, 51, 19, 0.684);
+  font-size: 2.2em;
+  padding: 0.3em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  margin: 5px;
+  background-color: rgba(247, 212, 181, 0.916);
+  border-style: ridge;
+  border-width: 0 0 12px 0;
+  border-radius: 10px 10px 0 0;
+  border-color: rgba(247, 212, 181, 0.916);
+}
+
+#menu a:hover {
+  color: rgb(255, 115, 0);
+  border-color: rgb(255, 116, 3);
+}
+
+#menu.current {
+  color: red;
+}
+
+/* ----- #menuToggler ----- */
+#menuToggler {
+  font-size: 3em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(89, 38, 13, 0.315);
+  border-radius: 50px 50px 0 0;
+  border-style: solid;
+  padding: 0 0.3em;
+  margin: 5px;
+  transition: 0.5s;
+}
+
+#menuToggler:hover {
+  color: rgb(255, 115, 0);
+  border-color: rgb(255, 116, 3);
+}
+
+/* ----- h2 ----- */
+h2 {
+  text-align: center;
+  color: rgba(87, 51, 19, 0.684);
+  font-size: 2em;
+  background-color: rgb(255, 211, 158);
+  border-style: solid;
+  border-width: 0 0 12px 0;
+  border-color: rgba(96, 30, 30, 0.916);
+  margin: 0;
+  animation: rollDown 1s ease 0s 1 normal none;
+}
+
+/* ----- img ----- */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-width: 10px;
+  border-color: rgba(96, 30, 30, 0.916);
+  animation: fadeIn 1s ease 0s 1 normal none;
+}
+
+/* ----- figcaption ----- */
+figcaption {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 8px;
+  animation: fadeIn 1s ease 0s 1 normal none;
+}
+
+/* ----- .modal ----- */
+.modal {
+  position: absolute;
+  height: auto;
+  width: auto;
+  transition: 0.5s;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+  overflow-y: scroll;
+  align-items: center;
+}
+
+/* ----- h3 ----- */
+h3 {
+  margin: 0 0.5em 0.2em 0.5em;
+  animation: fadeIn 1s ease 0s 1 normal none;
+}
+
+/* ----- p ----- */
+p {
+  margin: 0 0.5em 0.5em 0.5em;
+  animation: fadeIn 1s ease 0s 1 normal none;
+}
+
+/* ----- animations ----- */
+@keyframes rollDown {
+  0% {
+    opacity: 0;
+    transform: rotateX(-100deg);
+    transform-origin: top;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transform-origin: top;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ----- screen responsiveness ----- */
+@media screen and (min-width: 490px) {
+  #menuToggler {
+    display: none;
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    transform: none;
+    opacity: 1;
+    height: auto;
+    position: static;
+    padding-top: 0;
+  }
+
+  #menu.open {
+    background-color: transparent;
+  }
+
+  #menu a {
+    font-size: 1.5em;
+  }
+
+  img {
+    display: flex;
+    object-position: center;
+    width: 70%;
+    height: 50%;
+  }
+
+  figcaption {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #menuToggler {
+    display: none;
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #menu.open {
+    background-color: transparent;
+  }
+
+  #menu a {
+    font-size: 1.5em;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+}
